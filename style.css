@@ -1,0 +1,87 @@
+*{
+    font-family: 'Titillium Web', sans-serif;
+}
+body{
+    background-image: url(./BackgroundIMG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+}
+section{
+    position: absolute;
+    justify-content: center;
+    background-color: #2A6FC4;
+    /* background-image: linear-gradient(#0038ff, #0089ff); */
+    height: 94vh;
+    width: 77%;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    top: 3%;
+    left: 12%;
+    transition: .3s ease-in;
+    border-radius: 2rem;
+    z-index: 1;
+    border: 1px solid white;
+    
+}
+
+.main{
+    height: 94vh;
+    width: 109%;
+    text-align: center;
+    line-height: 2rem;
+    
+}
+label{
+    color: white;
+    font-size: 26px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal !important;
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-align: left;
+
+}
+.form-group{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 1fr; */
+    margin: 2rem auto;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: end;
+}
+span{
+    grid-column: 2/3;
+    color: #ffcfcf;
+    font-size: 1rem;
+    margin: 0px 0rem;
+}
+.form-control{
+    height: 3rem;
+    width: 80%;
+    padding-left: 10px;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    outline: none;
+}
+.btn{
+    margin: 23% 0px;
+    padding: 0.7em 2em;
+    border-radius: 1rem;
+    background: #0F2A5F;
+    /* background-image: linear-gradient(#0089ff,#0038ff); */
+    color: white;
+    font-size: 18px;
+    width: 13vw;
+    border: 1px solid #0F2A5F;
+}
+h2{
+    font-size: 4rem;
+    color: white;
+}
