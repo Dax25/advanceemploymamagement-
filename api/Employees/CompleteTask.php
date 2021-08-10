@@ -14,6 +14,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     $Task->id = $data->Id;
+    $Task->completiondate = date('Y-m-d-h-i-s');
 
     $Task->Complete();
     echo json_encode("ok");

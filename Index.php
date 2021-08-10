@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="https://ems.trialfire.net/favicon.jpeg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,9 +54,9 @@
                         $password = "Enter Password";
                     }
                      
-                     $conn = new PDO('mysql:host=localhost;dbname=employeemanagementsystem',"root","");
+                     $conn = new PDO('mysql:host=global-db;dbname=ems_trialfire_net',"ems.trialfire.net-unv7k4","an3AGnqzVIlk");
                      try{
-                        $conn = new PDO('mysql:host=localhost;dbname=employeemanagementsystem',"root","");
+                        $conn = new PDO('mysql:host=global-db;dbname=ems_trialfire_net',"ems.trialfire.net-unv7k4","an3AGnqzVIlk");
                         $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                     }
                     catch(PDOException $p){

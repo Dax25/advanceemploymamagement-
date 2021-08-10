@@ -10,6 +10,7 @@ class LeaveOfApplication{
     public $id;
     public $dateofleave_from;
     public $dateofleave_to;
+    public $reasonforleave;
 
 
     public function __construct($db)
@@ -20,10 +21,11 @@ class LeaveOfApplication{
 
     public function leaveofapplication()
     {
-        $query = 'INSERT into '.$this->table.'(dateofleave_from,dateofleave_to,approved,user_id) VALUES (:dateofleave_from,:dateofleave_to,:approved,:user_id)';
+        $query = 'INSERT into '.$this->table.'(dateofleave_from,dateofleave_to,reasonforleave,approved,user_id) VALUES (:dateofleave_from,:dateofleave_to,:reasonforleave,:approved,:user_id)';
         $data = [
             'dateofleave_from' => $this->dateofleave_from,
-            'dateofleave_to'=>$this->dateofleave_to, 
+            'dateofleave_to'=>$this->dateofleave_to,
+            'reasonforleave'=>$this->reasonforleave,
             'approved' => 0,
             'user_id'=>$_SESSION["id"]
         ];

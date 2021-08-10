@@ -33,7 +33,7 @@ class Notification{
         return $stmt;
     }
     public function Get(){
-        $query = "Select * from ".$this->table." where user_id = :user_id";
+        $query = "Select * from ".$this->table."  where user_id = :user_id order by id desc ";
         $data = [
             "user_id"=>$_SESSION['id']
         ];

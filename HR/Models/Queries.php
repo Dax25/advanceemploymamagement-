@@ -20,4 +20,10 @@ class Queries{
         $stmt->execute();
         return $stmt;
     }
+    public function GetqueriesAdmin(){
+        $query = "SELECT * from ".$this->table." where complain_for = 'Admin'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
 }

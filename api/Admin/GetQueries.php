@@ -4,21 +4,22 @@ header('Access-Control-Allow-Origin:*');
 header('Content-Type:application/json');
 
 include_once '../../Db/db.php';
-include_once '../../HR/Models/Task.php';
+include_once '../../HR/Models/Queries.php';
+include_once '../../Employee/Models/Users.php';
 
 $db = new dbConnection();
-$task = new Task($db->connect());
+$queries = new Queries($db->connect());
 
-$result = $task->GetCompleted();
+$result = $queries->GetqueriesAdmin();
 $arr =  array();
 
 foreach($result as $row)
 {
     $item = array(
         'id' => $row['id'],
-        'target_desc'=>$row['target_desc'],
-        'assigned_id'=>$row['assigned_id'],
-        'active'=>$row['active'],
+        'complain_for'=>$row['complain_for'],
+        'complain'=>$row['complain'],
+        'user_id'=>$row['user_id'],
     );
 
     array_push($arr,$item);

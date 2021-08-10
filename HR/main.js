@@ -37,26 +37,94 @@ const ResolveQueries = document.querySelector('#ResolveQueries');
 
 
 //For validation
+//User
+const updateFirstName = document.querySelector('#FirstName');
+const newFirstName = document.querySelector('#NewFirstName');
+const updateLastName = document.querySelector('#LastName');
+const newLastName = document.querySelector('#NewLastName');
+const updateUserName = document.querySelector('#Username');
+const newUserName = document.querySelector('#NewUserName');
+
+updateFirstName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+newFirstName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+updateLastName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+newLastName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+updateUserName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+newUserName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+//Address
+const streetName = document.querySelector('#StreetName');
+const newStreetName = document.querySelector('#NewStreetName');
+const unit = document.querySelector('#Unit');
+const newUnit = document.querySelector('#NewUnit');
+const city = document.querySelector('#City');
+const newCity = document.querySelector('#NewCity');
+const province = document.querySelector('#Province');
+const newProvince = document.querySelector('#NewProvince');
 const zipcode = document.querySelector('#ZipCode');
-const newZipcode = document.querySelector('#NewZipCode');
-const phoneNo = document.querySelector('#Phone');
-const email = document.getElementById("Email");
-const transitNumber = document.querySelector('#TransitNumber');
-const institudeNumber = document.querySelector("#InstitudeNumber");
-const accountNumber = document.querySelector("#AccountNumber");
-const newPhone = document.querySelector("#NewPhone");
-const newIdNumber= document.querySelector('#NewIdNumber');
-const newEmail = document.querySelector('#NewEmail');
-const loginEmail = document.querySelector('#LoginEmail');
+const newZipCode = document.querySelector('#NewZipCode');
+
+streetName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;=?#|'<>^*()%!-]/ig,"");
+});
+newStreetName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;=?#|'<>^*()%!-]/ig,"");
+});
+unit.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;=?#|'<>^*()%!-]/ig,"");
+});
+newUnit.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;=?#|'<>^*()%!-]/ig,"");
+});
+city.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+newCity.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+province.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+newProvince.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
 zipcode.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
     e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
 });
-newZipcode.addEventListener("input",(e)=>{
+newZipCode.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
     e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
 });
 
+//Phone No
+const phoneNo = document.querySelector('#Phone');
+const newPhone = document.querySelector('#NewPhone');
 
 phoneNo.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9]/ig, ""); 
@@ -66,21 +134,38 @@ newPhone.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9]/ig, ""); 
     e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
 });
+//Email
+const email = document.getElementById("Email");
+const loginEmail = document.getElementById("LoginEmail");
+const newEmail = document.getElementById("NewEmail");
+
 email.addEventListener("input",(e)=>{
-        //e.target.value = e.target.value.substr(0,e.target.value.length-1)
-        e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
-        
-});
-newEmail.addEventListener("input",(e)=>{
-        //e.target.value = e.target.value.substr(0,e.target.value.length-1)
-        e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
-        
+    //e.target.value = e.target.value.substr(0,e.target.value.length-1)
+    e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
+    
 });
 loginEmail.addEventListener("input",(e)=>{
-        //e.target.value = e.target.value.substr(0,e.target.value.length-1)
-        e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
-        
+    //e.target.value = e.target.value.substr(0,e.target.value.length-1)
+    e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
+    
 });
+newEmail.addEventListener("input",(e)=>{
+    //e.target.value = e.target.value.substr(0,e.target.value.length-1)
+    e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
+    
+});
+//Bank Info
+const bankName = document.querySelector('#BankName');
+const transitNumber = document.querySelector('#TransitNumber');
+const institudeNumber = document.querySelector("#InstitudeNumber");
+const accountNumber = document.querySelector("#AccountNumber");
+const newIdNumber = document.querySelector("#NewIdNumber");
+
+bankName.addEventListener("input",(e)=>{
+    e.target.value = e.target.value.replace(/[^\0-9a-z]/ig, ""); 
+    e.target.value = e.target.value.replace(/[$&+:;,\./=?#|'<>^*()%!0-9-]/ig,"");
+});
+
 transitNumber.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9]/ig, ""); 
     e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
@@ -97,7 +182,6 @@ newIdNumber.addEventListener("input",(e)=>{
     e.target.value = e.target.value.replace(/[^\0-9]/ig, ""); 
     e.target.value = e.target.value.replace(/[$&+,:;=?#|'<>^*()%!-]/ig,"");
 });
-
 //For the Popups
 
 //It will check which option is selected then it will open the container for that option
@@ -106,7 +190,7 @@ var popup = function(){
     {
         document.querySelector('.popup-address').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:10%;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetAddress.php',
+            url:'https://ems.trialfire.net/api/Employees/GetAddress.php',
             method:'GET',
             success: function (data){
                 $('#StreetName').val(data[0].street_name);
@@ -126,18 +210,18 @@ var popup = function(){
     }
     if(NewAddress.checked)
     {
-        document.querySelector('.popup-newaddress').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:10%;");
+        document.querySelector('.popup-newaddress').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:6%;");
         
     }
     else{
-        document.querySelector('.popup-newaddress').setAttribute("style","opacity:0;visibility: hidden;height:fit-content;top:10%;");
+        document.querySelector('.popup-newaddress').setAttribute("style","opacity:0;visibility: hidden;height:fit-content;top:6%;");
         
     }
     if(Phone.checked)
     {
         document.querySelector('.popup-phone').setAttribute("style","opacity:1;visibility: visible;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetEmp.php',
+            url:'https://ems.trialfire.net/api/Employees/GetEmp.php',
             method:'GET',
             success: function (data){
                 $('#Phone').val(data[0].phone_no);
@@ -155,7 +239,7 @@ var popup = function(){
     {
         document.querySelector('.popup-email').setAttribute("style","opacity:1;visibility: visible;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetEmp.php',
+            url:'https://ems.trialfire.net/api/Employees/GetEmp.php',
             method:'GET',
             success: function (data){
             
@@ -173,9 +257,9 @@ var popup = function(){
     }
     if(Availability.checked)
     {
-        document.querySelector('.popup-availability').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:9%;");
+        document.querySelector('.popup-availability').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:5%;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetAvailability.php',
+            url:'https://ems.trialfire.net/api/HR/GetAvailability.php',
             method:'GET',
             success: function (data){
                 $("#MondayFrom").val(data[0].monday.substr(0,4));
@@ -211,11 +295,11 @@ var popup = function(){
     }
     if(NewAvailability.checked)
     {
-        document.querySelector('.popup-newavailability').setAttribute("style","opacity:1;visibility: visible;height:fit-content;");
+        document.querySelector('.popup-newavailability').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:6%;");
        
     }
     else{
-        document.querySelector('.popup-newavailability').setAttribute("style","opacity:0;visibility: hidden;height:fit-content;");   
+        document.querySelector('.popup-newavailability').setAttribute("style","opacity:0;visibility: hidden;height:fit-content;top:6%;");   
     }
     if(PreviousAttendance.checked)
     {
@@ -235,17 +319,17 @@ var popup = function(){
     }
     if(AddUser.checked)
     {
-        document.querySelector('.popup-adduser').setAttribute("style","opacity:1;visibility: visible;height:fit-content;top:11%;");
+        document.querySelector('.popup-adduser').setAttribute("style","width: 86%;opacity: 1;visibility: visible;height: fit-content;top: 7%; left: 6%;");
        
     }
     else{
-        document.querySelector('.popup-adduser').setAttribute("style","opacity:0;visibility: hidden;height:fit-content;top:11%;");   
+        document.querySelector('.popup-adduser').setAttribute("style","width: 86%;opacity: 0;visibility: hidden;height: fit-content;top: 7%; left: 6%;");   
     }
     if(EditBank.checked)
     {
         document.querySelector('.popup-editbank').setAttribute("style","opacity:1;visibility: visible;height:fit-content; height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetBank.php',
+            url:'https://ems.trialfire.net/api/Employees/GetBank.php',
             method:'GET',
             success: function (data){
                 
@@ -272,7 +356,7 @@ var popup = function(){
     {
         document.querySelector('.popup-payroll').setAttribute("style","opacity:1;visibility: visible;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/Payroll.php',
+            url:'https://ems.trialfire.net/api/Employees/Payroll.php',
             method:'GET',
             success: function (data){
                 $('#RequestPay').attr('disabled',false);
@@ -330,7 +414,7 @@ var popup = function(){
         $('#NoPreTarget').remove();
         var count = 0 ;
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetCompletedTask.php',
+            url:'https://ems.trialfire.net/api/HR/GetCompletedTask.php',
             method:'GET',
             success: function (data){
                 console.log(data);
@@ -343,8 +427,9 @@ var popup = function(){
                     border-spacing: unset;
                     border: 1px solid;transition: .3s ease-in;" id="PreTaskTbl">
                 <tr>
-                <th style="border: 1px solid;font-weight:550">Target</th>
-                
+                <th style="border: 1px solid;font-weight:900;font-size:1.5rem">Target</th>
+                <th style="border: 1px solid;font-weight:900;font-size:1.5rem">Assigned date</th>
+                <th style="border: 1px solid;font-weight:900;font-size:1.5rem">Completion date</th>
                 </tr>
                 `;
             data.forEach(element => {
@@ -352,6 +437,8 @@ var popup = function(){
                 tablehr +=`
                 <tr>
                 <td style="border: 1px solid;font-weight:550">${element.target_desc}</td>
+                <td style="border: 1px solid;font-weight:550">${element.assigneddate}</td>
+                <td style="border: 1px solid;font-weight:550">${element.completiondate}</td>
                 </tr>`;
 
                 count++;
@@ -394,7 +481,7 @@ var popup = function(){
     {
         document.querySelector('.popup-companybenifits').setAttribute("style","opacity:1;visibility: visible;height:fit-content;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetDiscounts.php',
+            url:'https://ems.trialfire.net/api/Employees/GetDiscounts.php',
             method:'GET',
             success: function (data){
                 var count = 0;
@@ -450,7 +537,7 @@ var popup = function(){
     {
         document.querySelector('.popup-externalbenifits').setAttribute("style","opacity:1;visibility: visible;height:fit-content;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/GetDiscounts.php',
+            url:'https://ems.trialfire.net/api/Employees/GetDiscounts.php',
             method:'GET',
             success: function (data){
                 var count = 0;
@@ -522,7 +609,7 @@ var popup = function(){
     {
         document.querySelector('.popup-addemp').setAttribute("style","opacity:1;visibility: visible;height:fit-content;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetEmps.php',
+            url:'https://ems.trialfire.net/api/HR/GetEmps.php',
             method:'GET',
             success: function (data){
                 $('#EmpTbl').remove();
@@ -588,7 +675,7 @@ var popup = function(){
     {
         document.querySelector('.popup-credentials').setAttribute("style","opacity:1;visibility: visible;height:fit-content;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetEmps.php',
+            url:'https://ems.trialfire.net/api/HR/GetEmps.php',
             method:'GET',
             success: function (data){
                 $('#LoginEmptbl').remove();
@@ -663,7 +750,7 @@ var popup = function(){
     {
         document.querySelector('.popup-empattendance').setAttribute("style","opacity:1;visibility: visible;height:fit-content;height:fit-content;");
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetAttendance.php',
+            url:'https://ems.trialfire.net/api/HR/GetAttendance.php',
             method:'GET',
             success: function (data){
                 console.log(data);
@@ -797,53 +884,85 @@ Address.addEventListener('click',()=>{
 
 });
 $('#UpdateAddress').click(()=>{
-    var obj = {
-        street_name: document.querySelector('#StreetName').value,
-        unit: document.querySelector('#Unit').value,
-        city: document.querySelector('#City').value,
-        province: document.querySelector('#Province').value,
-        zipcode: document.querySelector('#ZipCode').value,
-    };
-    console.log(obj);
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/UpdateAddress.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked=false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked=false;
-            Employee.checked =false;
-            AddEditDelete.checked = false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            EmployeeAttendance.checked =false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error: function (error) {
-           console.error(error);
+    document.querySelector('#StreetError').style.visibility = "hidden";
+    document.querySelector('#UnitError').style.visibility = "hidden";
+    document.querySelector('#CityError').style.visibility = "hidden";
+    document.querySelector('#ProvinceError').style.visibility = "hidden";
+    document.querySelector('#ZipCodeError').style.visibility = "hidden";
+    if(document.querySelector('#StreetName').value != "" && 
+       document.querySelector('#Unit').value != "" &&
+       document.querySelector('#City').value != "" &&
+       document.querySelector('#Province').value != "" &&
+       document.querySelector('#ZipCode').value != ""
+       )
+    {
+        var obj = {
+            street_name: document.querySelector('#StreetName').value,
+            unit: document.querySelector('#Unit').value,
+            city: document.querySelector('#City').value,
+            province: document.querySelector('#Province').value,
+            zipcode: document.querySelector('#ZipCode').value,
+        };
+        
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Employees/UpdateAddress.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked=false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked=false;
+                Employee.checked =false;
+                AddEditDelete.checked = false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                EmployeeAttendance.checked =false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error: function (error) {
+            console.error(error);
+            }
+        });
+    }
+    else{
+        if(document.querySelector('#StreetName').value == ""){
+            document.querySelector('#StreetError').style.visibility = "visible";
         }
-    });
+        if(document.querySelector('#Unit').value == ""){
+            document.querySelector('#UnitError').style.visibility = "visible";
+        }
+        if(document.querySelector('#City').value == ""){
+            document.querySelector('#CityError').style.visibility = "visible";
+        }
+        if(document.querySelector('#Province').value == ""){
+            document.querySelector('#ProvinceError').style.visibility = "visible";
+        }
+        if(document.querySelector('#ZipCode').value == ""){
+            document.querySelector('#ZipCodeError').style.visibility = "visible";
+        }
+        
+    }
 })
+
 Phone.addEventListener('click',()=>{
     Address.checked = false;
     Email.checked = false;
@@ -874,48 +993,58 @@ Phone.addEventListener('click',()=>{
 
 });
 $('#Phonebtn').click(()=>{
-    var obj = {
-        phone_no: document.querySelector('#Phone').value
-    };
-    console.log(obj);
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/UpdatePhone.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked=false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked=false;
-            Employee.checked =false;
-            AddEditDelete.checked = false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            EmployeeAttendance.checked =false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error: function (error) {
-           console.error(error);
+    
+    document.querySelector('#PhoneError').style.visibility = "hidden";
+    if(document.querySelector('#Phone').value != ""){
+        var obj = {
+            phone_no: document.querySelector('#Phone').value
+        };
+        
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Employees/UpdatePhone.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked=false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked=false;
+                Employee.checked =false;
+                AddEditDelete.checked = false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                EmployeeAttendance.checked =false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                
+                popup();
+            },
+            error: function (error) {
+            console.error(error);
+            }
+        });
+    }
+    else{
+        if(document.querySelector('#Phone').value == ""){
+            document.querySelector('#PhoneError').style.visibility = "visible";
         }
-    });
+    }
 })
 Email.addEventListener('click',()=>{
     Address.checked = false;
@@ -947,49 +1076,60 @@ Email.addEventListener('click',()=>{
     popup();
 });
 $('#Emailbtn').click(()=>{
-    var obj = {
-        email: document.querySelector('#Email').value
-    };
-    console.log(obj);
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/UpdateEmail.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked=false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked=false;
-            Employee.checked =false;
-            AddEditDelete.checked = false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            EmployeeAttendance.checked =false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error: function (error) {
-           console.error(error);
+    
+    document.querySelector('#EmailError').style.visibility = "hidden";
+    if(document.querySelector('#Email').value != ""){
+ 
+        var obj = {
+            email: document.querySelector('#Email').value
+        };
+        
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Employees/UpdateEmail.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked=false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked=false;
+                Employee.checked =false;
+                AddEditDelete.checked = false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                EmployeeAttendance.checked =false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error: function (error) {
+            console.error(error);
+            }
+        });
+    }
+    else{
+        if(document.querySelector('#Email').value == ""){
+            document.querySelector('#EmailError').style.visibility = "visible";
         }
-    });
+    }
 })
+
 Availability.addEventListener('click',()=>{
     Address.checked = false;
     Phone.checked = false;
@@ -1031,7 +1171,7 @@ $('#Availabilitybtn').click(()=>{
     };
     console.log(obj);
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/UpdateAvailability.php',
+        url:'https://ems.trialfire.net/api/Employees/UpdateAvailability.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -1129,7 +1269,7 @@ PreviousAttendance.addEventListener('click',()=>{
     popup();
 });
 $.ajax({
-    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/PreviousAttendance.php',
+    url:'https://ems.trialfire.net/api/Employees/PreviousAttendance.php',
        method:'GET',
        success: function (data){
            if(data.lenght != 0){
@@ -1199,52 +1339,66 @@ LeaveApplication.addEventListener('click',()=>{
     popup();
 });
 $('#LeaveApplicationbtn').click(()=>{
-    
-    var obj = {
-        dateofleave_from: document.querySelector('#DateOfLeave_from').value,
-        dateofleave_to: document.querySelector('#DateOfLeave_to').value
+
+    document.querySelector('#DOLFError').style.visibility = "hidden";
+    document.querySelector('#DOLTError').style.visibility = "hidden";
+    document.querySelector('#RFLError').style.visibility = "hidden";
+
+
+    if(document.querySelector('#DateOfLeave_from').value != "" &&
+       document.querySelector('#DateOfLeave_to').value != "" &&
+       document.querySelector('#ReasonForLeave').value != ""){
+        var obj = {
+            dateofleave_from: document.querySelector('#DateOfLeave_from').value,
+            dateofleave_to: document.querySelector('#DateOfLeave_to').value,
+            reasonforleave:document.querySelector('#ReasonForLeave').value
+            
+        };
+        console.log(obj);
         
-    };
-    console.log(obj);
-    
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/LeaveOfApplication.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            UpdateUsers.checked = false;
-            ResolveQueries.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error: function (error) {
-           console.error(error);
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Employees/LeaveOfApplication.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Phone.checked=false;
+                Address.checked = false;
+                Email.checked=false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                HR.checked=false;
+                Job.checked = false;
+                popup();
+            },
+            error: function (error) {
+            console.error(error);
+            }
+        });
+    }
+    else{
+        
+        if( document.querySelector('#DateOfLeave_from').value == ""){
+            document.querySelector('#DOLFError').style.visibility = "visible";
+            
         }
-    });
+        if(document.querySelector('#DateOfLeave_to').value == ""){
+            document.querySelector('#DOLTError').style.visibility = "visible";
+
+        }
+        if(document.querySelector('#ReasonForLeave').value == ""){
+            document.querySelector('#RFLError').style.visibility = "visible";
+
+        }
+    }
 })
 EditBank.addEventListener('click',()=>{
     Address.checked = false;
@@ -1277,52 +1431,81 @@ EditBank.addEventListener('click',()=>{
 });
 
 $('#Bankbtn').click(()=>{
-    var obj = {
-        bank_name: document.querySelector('#BankName').value,
-        transit_number: document.querySelector('#TransitNumber').value,
-        typeofaccount: document.querySelector('#TypeOfAccount').value,
-        institude_number: document.querySelector('#InstitudeNumber').value,
-        account_no: document.querySelector('#AccountNumber').value,
-    };
-    console.log(obj);
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/UpdateBank.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error: function (error) {
-           console.error(error);
+    document.querySelector('#BankNameError').style.visibility = "hidden";
+    document.querySelector('#TransitNumberError').style.visibility = "hidden";
+    document.querySelector('#InstituteNumberError').style.visibility = "hidden";
+    document.querySelector('#AccountNumberError').style.visibility = "hidden";
+   
+
+
+    
+    if(document.querySelector('#BankName').value != "" &&
+       document.querySelector('#TransitNumber').value != "" &&
+       document.querySelector('#InstitudeNumber').value != "" &&
+       document.querySelector('#AccountNumber').value != ""){
+        var obj = {
+            bank_name: document.querySelector('#BankName').value,
+            transit_number: document.querySelector('#TransitNumber').value,
+            typeofaccount: document.querySelector('#TypeOfAccount').value,
+            institude_number: document.querySelector('#InstitudeNumber').value,
+            account_no: document.querySelector('#AccountNumber').value,
+        };
+        
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Employees/UpdateBank.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                Employee.checked=false;
+                AddEditDelete.checked =false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAttendance.checked = false;
+                EmployeeAvailability.checked = false;
+                UpdateUsers.checked = false;
+                ResolveQueries.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error: function (error) {
+            console.error(error);
+            }
+        });
+    }
+    else{
+        
+        if(document.querySelector('#BankName').value == ""){
+            
+            document.querySelector('#BankNameError').style.visibility = "visible";
         }
-    });
+        if(document.querySelector('#TransitNumber').value == ""){
+            document.querySelector('#TransitNumberError').style.visibility = "visible";
+        }
+        if(document.querySelector('#InstitudeNumber').value == ""){
+            document.querySelector('#InstituteNumberError').style.visibility = "visible";
+        }
+        if(document.querySelector('#AccountNumber').value == ""){
+            document.querySelector('#AccountNumberError').style.visibility = "visible";
+        }
+    }
 });
 
 CurrentMonthTarget.addEventListener('click',()=>{
@@ -1502,49 +1685,59 @@ Admin.addEventListener('click',()=>{
     popup();
 });
 $('#ContactAdmin').click(()=>{
-    var obj ={
-        message:$('#AdminContact').val(),
-        for:"Admin"
-    };
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Admin/SendMessage.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error:function(e){
-            console.error(e);
+    document.querySelector('#AdminMessageError').style.visibility = "hidden";
+
+    if($('#AdminContact').val() != "")
+    {
+        var obj ={
+            message:$('#AdminContact').val(),
+            for:"Admin"
+        };
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Admin/SendMessage.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                Employee.checked=false;
+                AddEditDelete.checked =false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAttendance.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+        if($('#AdminContact').val() == ""){
+            document.querySelector('#AdminMessageError').style.visibility = "visible";
+
         }
-    });
-    
+    }
 });
 Employee.addEventListener('click',()=>{
     Address.checked = false;
@@ -1575,50 +1768,93 @@ Employee.addEventListener('click',()=>{
     NewAddress.checked = false;
     popup();
 });
-$('#ContactEmp').click(()=>{
-    var obj ={
-        message:$('#EmpContact').val(),
-        for:"Employee"
-    };
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Admin/SendMessage.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error:function(e){
-            console.error(e);
-        }
-    });
+$.ajax({
+    url:'https://ems.trialfire.net/api/HR/GetEmps.php',
+    method:'GET',
+    success: function (data){
     
+        data.forEach(element =>{
+            var option = document.createElement('option');
+            option.textContent = element.username;
+            option.value = element.id;
+
+            $('#CompEmplist').append(option);
+        });
+    },
+    error:function(e){
+        
+    }
+});
+$('#ContactEmp').click(()=>{
+    document.querySelector('#EmpMessageError').style.visibility = "hidden";
+    if($('#EmpContact').val() != ""){
+        var obj ={
+            message:$('#EmpContact').val(),
+            from:"HR",
+            user_id:$('#CompEmplist').val()
+        };
+        $.ajax({
+            url:'https://ems.trialfire.net/api/Admin/SendMessages.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                Employee.checked=false;
+                AddEditDelete.checked =false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAttendance.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+                var noti ={
+                    notification :`You have new message`,
+                    user_id:$('#CompEmplist').val(),
+                    notification_type:"Good"
+                }
+                $.ajax({
+                    url:'https://ems.trialfire.net/api/Admin/PushNotification.php',
+                    method:'POST',
+                    data:JSON.stringify(noti),
+                    success: function (data){
+    
+                    },
+                    error:function(e){
+                        console.log(e);
+                    }
+                })
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+        if($('#EmpContact').val() == ""){
+            document.querySelector('#EmpMessageError').style.visibility = "visible";
+        }
+    }
+    $('#EmpContact').val("");
+    $('#CompEmplist').val($("#CompEmplist").prop("selectedIndex", 0).val());
 });
 AddEditDelete.addEventListener('click',()=>{
     Address.checked = false;
@@ -1682,7 +1918,7 @@ function UpdateUser(id){
     UpdateUsers.click();
     console.log(id);
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetEmps.php',
+        url:'https://ems.trialfire.net/api/HR/GetEmps.php',
         method:'GET',
         success: function (data){
             data.forEach(element=>{
@@ -1697,50 +1933,67 @@ function UpdateUser(id){
     })
 }
 $('#UpdateUserInfo').click(()=>{
-    var obj = {
-        id:$('#UserID').val(),
-        firstname:$('#FirstName').val(),
-        lastname:$('#LastName').val(),
-        username:$('#Username').val()
-    }
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/UpdateUser.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error:function(e){
-            console.error(e);
+    document.querySelector('#UpdateFirstNameError').style.visibility = "hidden";
+    document.querySelector('#UpdateLastNameError').style.visibility = "hidden";
+    document.querySelector('#UpdateUserNameError').style.visibility = "hidden";
+    if($('#FirstName').val() != "" && $('#LastName').val() != "" && $('#Username').val() !=""){
+        var obj = {
+            id:$('#UserID').val(),
+            firstname:$('#FirstName').val(),
+            lastname:$('#LastName').val(),
+            username:$('#Username').val()
         }
-    });
+        $.ajax({
+            url:'https://ems.trialfire.net/api/HR/UpdateUser.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                Employee.checked=false;
+                AddEditDelete.checked =false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAttendance.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+         
+        if($('#FirstName').val() == ""){
+            document.querySelector('#UpdateFirstNameError').style.visibility = "visible";    
+        }
+        if($('#LastName').val() == ""){
+            document.querySelector('#UpdateLastNameError').style.visibility = "visible";
+        }
+        if($('#Username').val() ==""){
+            document.querySelector('#UpdateUserNameError').style.visibility = "visible";
+        }
+    }
     console.log(obj);
 });
 function DeleteUsers(id){
@@ -1748,7 +2001,7 @@ function DeleteUsers(id){
         id:id
     }
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/DeleteUser.php',
+        url:'https://ems.trialfire.net/api/HR/DeleteUser.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -1848,7 +2101,7 @@ LoginInfo.addEventListener('click',()=>{
 function ChangeCredentials(id){
     LoginInfo.click();
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetEmps.php',
+        url:'https://ems.trialfire.net/api/HR/GetEmps.php',
         method:'GET',
         success: function (data){
             data.forEach(element=>{
@@ -1864,49 +2117,62 @@ function ChangeCredentials(id){
     console.log(id);
 }
 $('#UpdateLoginInfo').click(()=>{
-    var obj = {
-        id: $('#LoginID').val(),
-        email:$('#LoginEmail').val(),
-        password:$('#LoginPass').val()
-    }
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/UpdateCredentials.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked = false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked = false;
-            Employee.checked=false;
-            AddEditDelete.checked =false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAttendance.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-        },
-        error:function(e){
-            console.error(e);
+    document.querySelector('#UpdateLoginEmailError').style.visibility = "hidden";    
+    document.querySelector('#UpdateLoginPassError').style.visibility = "hidden";    
+
+    if($('#LoginID').val() != "" && $('#LoginEmail').val() != "" && $('#LoginPass').val() != ""){
+        var obj = {
+            id: $('#LoginID').val(),
+            email:$('#LoginEmail').val(),
+            password:$('#LoginPass').val()
         }
-    });
+        $.ajax({
+            url:'https://ems.trialfire.net/api/HR/UpdateCredentials.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked = false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked = false;
+                Employee.checked=false;
+                AddEditDelete.checked =false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAttendance.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+        if($('#LoginEmail').val() == ""){
+            document.querySelector('#UpdateLoginEmailError').style.visibility = "visible";    
+        }
+        if($('#LoginPass').val() == ""){
+            document.querySelector('#UpdateLoginPassError').style.visibility = "visible";    
+        }
+    }
     console.log(obj);
 });
 EmployeePaystub.addEventListener('click',()=>{
@@ -1968,7 +2234,7 @@ EmployeeTarget.addEventListener('click',()=>{
     popup();
 });
 $.ajax({
-    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetEmps.php',
+    url:'https://ems.trialfire.net/api/HR/GetEmps.php',
     method:'GET',
     success: function (data){
         $('#GetSupportAdmin').attr('disabled',false);
@@ -1997,10 +2263,11 @@ $('#GetSupportAdmin').click(()=>{
         
         var obj = {
             target_desc : $('#Task').val(),
-            assigned_id : $('#Emplist').val()
+            assigned_id : $('#Emplist').val(),
+
         };
         $.ajax({
-            url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/AddTask.php',
+            url:'https://ems.trialfire.net/api/HR/AddTask.php',
             method:'POST',
             data:JSON.stringify(obj),
             success: function (data){
@@ -2032,6 +2299,22 @@ $('#GetSupportAdmin').click(()=>{
                 AddUser.checked = false;
                 NewAddress.checked = false;
                 popup();
+                var noti ={
+                    notification :`Task "${obj.target_desc}" was assigned to you.Open your active targets to view the details"`,
+                    user_id:$('#Emplist').val(),
+                    notification_type:"Good"
+                }
+                $.ajax({
+                    url:'https://ems.trialfire.net/api/Admin/PushNotification.php',
+                    method:'POST',
+                    data:JSON.stringify(noti),
+                    success: function (data){
+    
+                    },
+                    error:function(e){
+                        console.log(e);
+                    }
+                })
             },
             error:function(e){
                 console.error(e);
@@ -2075,7 +2358,7 @@ function ApproveAttendance(id){
         id:id
     }
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/UpdateAttendance.php',
+        url:'https://ems.trialfire.net/api/HR/UpdateAttendance.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -2174,7 +2457,7 @@ ResolveQueries.addEventListener('click',()=>{
 });
 
 $.ajax({
-    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetQueries.php',
+    url:'https://ems.trialfire.net/api/HR/GetQueries.php',
        method:'GET',
        success: function (data){
            if(data.lenght != 0){
@@ -2213,7 +2496,7 @@ error:function(e){
 });
 function GetNotification(){
 $.ajax({
-    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Admin/GetNotification.php',
+    url:'https://ems.trialfire.net/api/Admin/GetNotification.php',
     method:'GET',
     success: function (data){
         data.forEach(element=>{
@@ -2242,7 +2525,7 @@ function GetTask(){
     var targetCount =0;
     var count = 0 ;
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/GetTask.php',
+        url:'https://ems.trialfire.net/api/HR/GetTask.php',
         method:'GET',
         success: function (data){
             $('#NoActiveTarget').remove();
@@ -2255,9 +2538,10 @@ function GetTask(){
                 border-spacing: unset;
                 border: 1px solid ;transition: .3s ease-in;" id="TaskTbl">
             <tr>
-              <th style="border: 1px solid;">Target</th>
-              <th style="border: 1px solid;">Status</th>
-              <th style="border: 1px solid;">Action</th>
+                <th style="border: 1px solid;font-weight:550;">Target</th>
+                <th style="border: 1px solid;font-weight:550;">Assigned Date</th>
+                <th style="border: 1px solid;font-weight:550;">Status</th>
+                <th style="border: 1px solid;font-weight:550;">Action</th>
             </tr>
             `;
         data.forEach(element => {
@@ -2309,9 +2593,10 @@ function GetTask(){
             }
             tablehr +=`
             <tr>
-              <td style="border: 1px solid;font-weight:550;">${element.target_desc}</td>
-              <td style="border: 1px solid;font-weight:550;">${element.active}</td>
-              <td style="border: 1px solid;font-weight:550;" >${btn}</td>
+                <td style="border: 1px solid;font-weight:550;">${element.target_desc}</td>
+                <td style="border: 1px solid;font-weight:550;">${element.assigneddate}</td>
+                <td style="border: 1px solid;font-weight:550;">${element.active}</td>
+                <td style="border: 1px solid;font-weight:550;" >${btn}</td>
             </tr>`;
 
             count++;
@@ -2390,7 +2675,7 @@ function ActivateTarget(id){
         Id : id
     };
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/ActivateTask.php',
+        url:'https://ems.trialfire.net/api/Employees/ActivateTask.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -2445,7 +2730,7 @@ function DeactivateTarget(id){
         Id : id
     };
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/DeactivateTask.php',
+        url:'https://ems.trialfire.net/api/Employees/DeactivateTask.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -2500,7 +2785,7 @@ function CompleteTarget(id){
         Id : id
     };
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/CompleteTask.php',
+        url:'https://ems.trialfire.net/api/Employees/CompleteTask.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -2639,117 +2924,206 @@ function AddUsers(){
 }
 
 $('#AddNewUser').click(()=>{
-    var obj = {
-        firstname :$('#NewFirstName').val(),
-        lastname:$('#NewLastName').val(),
-        username:$('#NewUserName').val(),
-        password:$('#NewPassword').val(),
-        email:$('#NewEmail').val(),
-        dateofbirth:$('#NewDOB').val(),
-        phone:$('#NewPhone').val(),
-        worktype:$('#NewWorkType').val(),
-        typeofid:$('#NewTypeId').val(),
-        idnumber:$('#NewIdNumber').val(),
-        hourlywage:$('#NewHourlyWage').val()
-    }
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/AddEmp.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-          
-            console.log(data);
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked=false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked=false;
-            Employee.checked =false;
-            AddEditDelete.checked = false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            EmployeeAttendance.checked =false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-            NewAddress.click();
-            $('#NewAddressId').val(data.id)
-            $('#NewAvailabilityId').val(data.id)
-        },
-        error:function(e){
-            console.error(e);
+    document.querySelector('#NewFirstNameError').style.visibility = "hidden";
+    document.querySelector('#NewLastNameError').style.visibility = "hidden";
+    document.querySelector('#NewUsernameError').style.visibility = "hidden";
+    document.querySelector('#NewPassError').style.visibility = "hidden";
+    document.querySelector('#NewEmailError').style.visibility = "hidden";
+    document.querySelector('#NewDateError').style.visibility = "hidden";
+    document.querySelector('#NewIDNumberError').style.visibility = "hidden";
+    document.querySelector('#NewHourlyWageError').style.visibility = "hidden";
+    
+    if($('#NewFirstName').val() != "" &&
+       $('#NewLastName').val() != "" &&
+       $('#NewUserName').val() != ""&&
+       $('#NewPassword').val() != "" &&
+       $('#NewEmail').val() != "" &&
+       $('#NewDOB').val() != "" &&
+       $('#NewPhone').val() != "" &&
+       $('#NewIdNumber').val() != "" &&
+       $('#NewHourlyWage').val() != ""){
+        var obj = {
+            firstname :$('#NewFirstName').val(),
+            lastname:$('#NewLastName').val(),
+            username:$('#NewUserName').val(),
+            password:$('#NewPassword').val(),
+            email:$('#NewEmail').val(),
+            dateofbirth:$('#NewDOB').val(),
+            phone:$('#NewPhone').val(),
+            worktype:$('#NewWorkType').val(),
+            typeofid:$('#NewTypeId').val(),
+            idnumber:$('#NewIdNumber').val(),
+            hourlywage:$('#NewHourlyWage').val()
         }
-    });
-    console.log(obj);
+        $.ajax({
+            url:'https://ems.trialfire.net/api/HR/AddEmp.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+            
+                console.log(data);
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked=false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked=false;
+                Employee.checked =false;
+                AddEditDelete.checked = false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                EmployeeAttendance.checked =false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+                NewAddress.click();
+                $('#NewAddressId').val(data.id)
+                $('#NewAvailabilityId').val(data.id)
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+       if($('#NewFirstName').val() == ""){
+        document.querySelector('#NewFirstNameError').style.visibility = "visible";
+
+       }
+       if($('#NewLastName').val() == ""){
+        document.querySelector('#NewLastNameError').style.visibility = "visible";
+
+       }
+       if($('#NewUserName').val() == ""){
+        document.querySelector('#NewUsernameError').style.visibility = "visible";
+
+       }
+       if($('#NewPassword').val() == ""){
+        document.querySelector('#NewPassError').style.visibility = "visible";
+
+       }
+       if($('#NewEmail').val() == ""){
+        document.querySelector('#NewEmailError').style.visibility = "visible";
+
+       }
+       if($('#NewDOB').val() == ""){
+        document.querySelector('#NewDateError').style.visibility = "visible";
+
+       }
+       if($('#NewPhone').val() == ""){
+        document.querySelector('#NewPhoneError').style.visibility = "visible";
+
+       }
+       if($('#NewIdNumber').val() == ""){
+        document.querySelector('#NewIDNumberError').style.visibility = "visible";
+
+       }
+       if( $('#NewHourlyWage').val() == ""){
+        document.querySelector('#NewHourlyWageError').style.visibility = "visible";
+
+       }
+    }
+    
 })
 $('#AddAddress').click(()=>{
-    var obj={
-        user_id :$('#NewAddressId').val(),
-        street_name :$('#NewStreetName').val(),
-        unit :$('#NewUnit').val(),
-        city :$('#NewCity').val(),
-        province :$('#NewProvince').val(),
-        zipcode :$('#NewZipCode').val(),
-    }
-    console.log(obj)
-    $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/HR/AddAddress.php',
-        method:'POST',
-        data:JSON.stringify(obj),
-        success: function (data){
-          
-            console.log(data);
-            Address.checked = false;
-            Phone.checked = false;
-            Email.checked = false;
-            Availability.checked=false;
-            MarkPresence.checked = false;
-            NewAvailability.checked = false;
-            PreviousAttendance.checked = false;
-            LeaveApplication.checked = false;
-            EditBank.checked=false;
-            Payroll.checked=false;
-            CurrentMonthTarget.checked=false;
-            PreviousTarget.checked = false;
-            CompanyBenifits.checked = false;
-            ExternalBenifits.checked = false;
-            Admin.checked=false;
-            Employee.checked =false;
-            AddEditDelete.checked = false;
-            EmployeeCredentials.checked = false;
-            EmployeePaystub.checked = false;
-            EmployeeTarget.checked = false;
-            EmployeeAvailability.checked = false;
-            ResolveQueries.checked = false;
-            EmployeeAttendance.checked =false;
-            UpdateUsers.checked = false;
-            LoginInfo.checked = false;
-            AddUser.checked = false;
-            NewAddress.checked = false;
-            popup();
-            NewAvailability.click();
-        },
-        error:function(e){
-            console.error(e);
-        }
-    });
+    document.querySelector('#NewStreetError').style.visibility = "hidden";
+    document.querySelector('#NewUnitError').style.visibility = "hidden";
+    document.querySelector('#NewCityError').style.visibility = "hidden";
+    document.querySelector('#NewProvinceError').style.visibility = "hidden";
+    document.querySelector('#NewZipCodeError').style.visibility = "hidden";
 
-})
+
+    if( $('#NewStreetName').val() != "" &&
+        $('#NewUnit').val() != "" &&
+        $('#NewCity').val() != "" &&
+        $('#NewProvince').val() != "" &&
+        $('#NewZipCode').val() != ""){
+        var obj={
+            user_id :$('#NewAddressId').val(),
+            street_name :$('#NewStreetName').val(),
+            unit :$('#NewUnit').val(),
+            city :$('#NewCity').val(),
+            province :$('#NewProvince').val(),
+            zipcode :$('#NewZipCode').val(),
+        }
+        console.log(obj)
+        $.ajax({
+            url:'https://ems.trialfire.net/api/HR/AddAddress.php',
+            method:'POST',
+            data:JSON.stringify(obj),
+            success: function (data){
+            
+                console.log(data);
+                Address.checked = false;
+                Phone.checked = false;
+                Email.checked = false;
+                Availability.checked=false;
+                MarkPresence.checked = false;
+                NewAvailability.checked = false;
+                PreviousAttendance.checked = false;
+                LeaveApplication.checked = false;
+                EditBank.checked=false;
+                Payroll.checked=false;
+                CurrentMonthTarget.checked=false;
+                PreviousTarget.checked = false;
+                CompanyBenifits.checked = false;
+                ExternalBenifits.checked = false;
+                Admin.checked=false;
+                Employee.checked =false;
+                AddEditDelete.checked = false;
+                EmployeeCredentials.checked = false;
+                EmployeePaystub.checked = false;
+                EmployeeTarget.checked = false;
+                EmployeeAvailability.checked = false;
+                ResolveQueries.checked = false;
+                EmployeeAttendance.checked =false;
+                UpdateUsers.checked = false;
+                LoginInfo.checked = false;
+                AddUser.checked = false;
+                NewAddress.checked = false;
+                popup();
+                NewAvailability.click();
+            },
+            error:function(e){
+                console.error(e);
+            }
+        });
+    }
+    else{
+        
+        if($('#NewStreetName').val() == ""){
+            document.querySelector('#NewStreetError').style.visibility = "visible";
+        }
+        if($('#NewUnit').val() == ""){
+            document.querySelector('#NewUnitError').style.visibility = "visible";
+        }
+        if($('#NewCity').val() == ""){
+            document.querySelector('#NewCityError').style.visibility = "visible";
+        }
+        if($('#NewProvince').val() == ""){
+            document.querySelector('#NewProvinceError').style.visibility = "visible";
+        }
+        if($('#NewZipCode').val() == "")
+        {
+            document.querySelector('#NewZipCodeError').style.visibility = "visible";
+        }
+    }
+
+});
 $("#NewAvailabilitybtn").click(()=>{
     var obj = {
         user_id: $('#NewAvailabilityId').val(),
@@ -2763,7 +3137,7 @@ $("#NewAvailabilitybtn").click(()=>{
     };
     console.log(obj);
     $.ajax({
-        url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Employees/AddAvailability.php',
+        url:'https://ems.trialfire.net/api/Employees/AddAvailability.php',
         method:'POST',
         data:JSON.stringify(obj),
         success: function (data){
@@ -2804,7 +3178,7 @@ $("#NewAvailabilitybtn").click(()=>{
 
 
 $.ajax({
-    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Admin/GetNotificationNew.php',
+    url:'https://ems.trialfire.net/api/Admin/GetNotificationNew.php',
     method:'GET',
     success: function (data){
         console.log(data)
@@ -2843,7 +3217,7 @@ $.ajax({
                     id : id
                 }
                 $.ajax({
-                    url:'http://localhost:8080/Advance%20Employee%20Management%20System/api/Admin/SetOldNotification.php',
+                    url:'https://ems.trialfire.net/api/Admin/SetOldNotification.php',
                     method:'POST',
                     data:JSON.stringify(obj),
                     success: function (data){

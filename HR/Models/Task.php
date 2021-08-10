@@ -11,8 +11,10 @@ class Task{
     public int $id;
     public string $target_desc;
     public int $assigned_id;
+    public $assigneddate;
     public string $active = "InActive";
     public string $completed = "InComplete";
+    public $completiondate;
 
     public function __construct($db)
     {
@@ -20,12 +22,14 @@ class Task{
     }
 
     public function Post(){
-        $query = "INSERT into ".$this->table."(target_desc,assigned_id,active,completed) VALUES (:target_desc,:assigned_id,:active,:completed)";
+        $query = "INSERT into ".$this->table."(target_desc,assigned_id,assigneddate,active,completed,completiondate) VALUES (:target_desc,:assigned_id,:assigneddate,:active,:completed,:completiondate)";
         $data = [
             "target_desc" =>$this->target_desc,
             "assigned_id" => $this->assigned_id,
+            "assigneddate"=>$this->assigneddate,
             "active" => $this->active,
-            "completed"=>$this->completed
+            "completed"=>$this->completed,
+            "completiondate"=>$this->completiondate
         ];
         $stmt = $this->conn->prepare($query);
         $stmt->execute($data);
@@ -64,8 +68,9 @@ class Task{
         return $stmt;
     }
     public function Complete(){
-        $query = "UPDATE ".$this->table." set completed = 'Complete' where id = :id";
+        $query = "UPDATE ".$this->table." set completed = 'Complete', completiondate = :completiondate where id = :id";
         $data=[
+            "completiondate"=>$this->completiondate,
             "id"=>$this->id
         ];
         $stmt = $this->conn->prepare($query);

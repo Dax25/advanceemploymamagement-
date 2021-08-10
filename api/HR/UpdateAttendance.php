@@ -6,18 +6,18 @@
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
     include_once '../../Db/db.php';
-    include_once '../../HR/Models/Task.php';
+    include_once '../../Employee/Models/Presence.php';
     
     $db = new dbConnection();
-    $Task = new Task($db->connect());
+    $Presence = new presence($db->connect());
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $Task->target_desc = $data->target_desc;
-    $Task->assigned_id = $data->assigned_id;
+    $Presence->id = $data->id;
+    
 
 
-    $Task->Post();
+    $Presence->ApproveAttendance();
     echo json_encode("ok");
 
     return json_encode("ok");

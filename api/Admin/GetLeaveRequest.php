@@ -43,7 +43,8 @@ foreach($result2 as $row){
             "id"=>$row['id'],
             "user_id"=>$row['user_id'],
             "dateofleave_from"=>$row['dateofleave_from'],
-            "dateofleave_to"=>$row['dateofleave_to']
+            "dateofleave_to"=>$row['dateofleave_to'],
+            "reasonforleave"=>$row['reasonforleave']
         ];
         array_push($leaves,$item);
 }
@@ -57,7 +58,8 @@ foreach($leaves as $row){
                 "user_id"=>$row2['id'],
                 "username"=>$row2['username'],
                 "dateofleave_from"=>$row['dateofleave_from'],
-                "dateofleave_to"=>$row['dateofleave_to']
+                "dateofleave_to"=>$row['dateofleave_to'],
+                "reasonforleave"=>$row['reasonforleave']
             ];
         }
     }

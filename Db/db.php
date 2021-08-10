@@ -1,10 +1,10 @@
 <?php
 
     class dbConnection{
-        private string $host = 'localhost';
-        private string $db_name = 'employeemanagementsystem';
-        private string $username= 'root';
-        private string $password = '';
+        private string $host = 'global-db';
+        private string $db_name = 'ems_trialfire_net';
+        private string $username= 'ems.trialfire.net-unv7k4';
+        private string $password = 'an3AGnqzVIlk';
         private  $conn;
 
         public function connect(){
